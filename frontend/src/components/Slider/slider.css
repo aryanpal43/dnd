@@ -1,0 +1,9 @@
+.img-slider-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  transition: translate 700ms ease-in-out;
+}
