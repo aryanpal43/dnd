@@ -73,7 +73,7 @@ app.post("/api/sign-upload", (req, res, next) => {
 
 app.use(errorHandler);
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   connectDB();
   console.log("Server running");
 });
