@@ -13,7 +13,9 @@ const Product = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get(
+          `${import.meta.env.VITE_APP_BACKEND_BASEURL}/api/products`
+        );
         setProducts(response.data);
         setLoading(false);
         console.log("Fetched products:", response.data);

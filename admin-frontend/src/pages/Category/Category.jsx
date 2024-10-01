@@ -40,7 +40,7 @@ const Category = () => {
               <h1 className="text-2xl text-gray-800">Categories</h1>
               <p>Categories you have added before</p>
             </div>
-            <Link to="/add-product">
+            <Link to="/add-category">
               <Button className="bg-orange-900 text-white flex justify-center items-center">
                 + Add
               </Button>
