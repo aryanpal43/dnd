@@ -71,7 +71,9 @@ const Shop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get(
+          `${import.meta.env.VITE_APP_BACKEND_BASEURL}/api/products`
+        );
         setProductInfos(response.data);
         setSortedProducts(response.data);
         setLoading(false);

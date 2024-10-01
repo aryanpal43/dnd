@@ -143,7 +143,7 @@ const Cart = () => {
             <div className="grid grid-cols-3 my-4 gap-6">
               <div className="col-span-1 h-[150px]">
                 <img
-                  src={product.img}
+                  src={product.imgUrl}
                   className="w-full h-full object-cover ml-3"
                 />
               </div>
@@ -164,13 +164,11 @@ const Cart = () => {
                           dispatch(
                             RemoveItemCart({
                               id: product.id,
-                              name: product.name,
-                              price: product.price,
-                              category: product.category,
-                              img: product.img,
-                              quantity: product.quantity,
                             })
                           );
+
+                          // Sync cart with backend after removing an item
+                          syncCartWithBackend([...products]);
                         }}
                       >
                         <FaMinus />
@@ -183,12 +181,11 @@ const Cart = () => {
                           dispatch(
                             AddItemCart({
                               id: product.id,
-                              name: product.name,
-                              price: product.price,
-                              img: product.img,
-                              quantity: product.quantity,
                             })
                           );
+
+                          // Sync cart with backend after removing an item
+                          syncCartWithBackend([...products]);
                         }}
                       >
                         <FaPlus />
@@ -202,13 +199,16 @@ const Cart = () => {
                     <button>
                       <FaRegTrashCan
                         className="h-4 w-4 text-destructive mr-6"
-                        onClick={() =>
+                        onClick={() => {
                           dispatch(
                             removeItem({
                               id: product.id,
                             })
-                          )
-                        }
+                          );
+
+                          // Sync cart with backend after deleting an item
+                          syncCartWithBackend([...products]);
+                        }}
                       />
                     </button>
                   </div>

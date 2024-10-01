@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import Cart from "./pages/Cart/Cart";
+import Footer from "./pages/Footer";
 
 const Home = lazy(() => import("././pages/Home/Home"));
 const Product = lazy(() => import("././pages/Product/Product"));
@@ -35,6 +36,7 @@ const App = () => {
         </Routes>
         <Toaster />
       </Suspense>
+      <Footer />
     </BrowserRouter>
   );
 };

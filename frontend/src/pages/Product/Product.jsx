@@ -119,7 +119,7 @@ const Product = () => {
 
             <p className="text-base md:text-lg text-stone-800 ">
               <span className="text-muted-foreground">Category: </span>
-              <span className="font-semibold">{product.category.name}</span>
+              <span className="font-semibold">{product.category}</span>
             </p>
             <Separator className="my-2 md:my-4 " />
             <p className="text-pink-500 font-[500] text-xl md:text-2xl">
@@ -187,7 +187,7 @@ const Product = () => {
                     name: product.name,
                     price: product.price,
                     imgUrl: product.imgUrl,
-                    category: product.category.name,
+                    // category: product.category.name,
                     quantity,
                     size: size,
                   };
